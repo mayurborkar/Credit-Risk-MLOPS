@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src\load_data.py --config=params.yaml
+    deps:
+    - path: data_given\credit.csv
+      md5: d97a9236772dccd8e215323639ffd47c
+      size: 51943
+    - path: src\get_data.py
+      md5: 8517be3f0eef9efff18b48f2c43373fe
+      size: 746
+    - path: src\load_data.py
+      md5: 6ab150eee37f213d3034a87990fb403c
+      size: 516
+    outs:
+    - path: data\raw\credit.csv
+      md5: 10ed9f5ef27e764435c4600fce6df820
+      size: 48052
