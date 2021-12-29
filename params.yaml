@@ -1,0 +1,24 @@
+base:
+  project:Credit_Risk_MLOPS
+  random_state:42
+  target_col:credit_risk
+
+data_source:
+  s3_source:data_given\Database_Credit.csv
+
+load_data:
+  raw_dataset_csv:data\raw\Database_Credit.csv
+
+split_data:
+  train_path:data\processed\train_Database_Credit.csv
+  test_path:data\processed\test_Database_Credit.csv
+  test_size:0.2
+
+estimators:
+  RandomForestClassifier:
+    params:
+      max_depth: 8
+      max_features: 5
+      n_estimators: 103
+
+model_dir: saved_models
