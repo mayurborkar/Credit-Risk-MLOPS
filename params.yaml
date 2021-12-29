@@ -4,14 +4,14 @@ base:
   target_col:credit_risk
 
 data_source:
-  s3_source:data_given\Database_Credit.csv
+  s3_source: data_given\credit.csv
 
 load_data:
-  raw_dataset_csv:data\raw\Database_Credit.csv
+  raw_dataset_csv: data\raw\credit.csv
 
 split_data:
-  train_path:data\processed\train_Database_Credit.csv
-  test_path:data\processed\test_Database_Credit.csv
+  train_path:data\processed\train_credit.csv
+  test_path:data\processed\test_credit.csv
   test_size:0.2
 
 estimators:
