@@ -16,3 +16,19 @@ stages:
     - path: data\raw\credit.csv
       md5: 10ed9f5ef27e764435c4600fce6df820
       size: 48052
+  split_data:
+    cmd: python src\split_data.py --config=params.yaml
+    deps:
+    - path: data\raw\credit.csv
+      md5: 10ed9f5ef27e764435c4600fce6df820
+      size: 48052
+    - path: src\split_data.py
+      md5: 8c20ab52cdf6705bb7e03e598222679a
+      size: 994
+    outs:
+    - path: data\processed\test_credit.csv
+      md5: 0a80532b3dde2fe464840be0d2197a46
+      size: 9820
+    - path: data\processed\train_credit.csv
+      md5: 3215b87a310b4faebf43214efce47079
+      size: 38491

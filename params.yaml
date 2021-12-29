@@ -1,7 +1,7 @@
 base:
-  project:Credit_Risk_MLOPS
-  random_state:42
-  target_col:credit_risk
+  project: Credit_Risk_MLOPS
+  random_state: 42
+  target_col: credit_risk
 
 data_source:
   s3_source: data_given\credit.csv
@@ -10,9 +10,9 @@ load_data:
   raw_dataset_csv: data\raw\credit.csv
 
 split_data:
-  train_path:data\processed\train_credit.csv
-  test_path:data\processed\test_credit.csv
-  test_size:0.2
+  train_path: data\processed\train_credit.csv
+  test_path: data\processed\test_credit.csv
+  test_size: 0.2
 
 estimators:
   RandomForestClassifier:

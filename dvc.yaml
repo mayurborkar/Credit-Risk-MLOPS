@@ -7,3 +7,12 @@ stages:
     - data_given\credit.csv
     outs:
     - data\raw\credit.csv
+
+  split_data:
+    cmd: python src\split_data.py --config=params.yaml
+    deps:
+      - src\split_data.py
+      - data\raw\credit.csv
+    outs:
+      - data\processed\train_credit.csv
+      - data\processed\test_credit.csv
