@@ -18,7 +18,8 @@ def get_data(config_path):
     # print(config)
     data_path = config["data_source"]["s3_source"]
     df = pd.read_csv(data_path, sep=",", encoding='utf-8')
-    df.drop(['Unnamed: 0'],axis=1, inplace=True)
+    df.drop(["Unnamed: 0", "other_debtors", "other_installment_plans", "housing", "job", "people_liable",
+             "foreign_worker"], axis=1, inplace=True)
     # print(df.head())
     return df
 

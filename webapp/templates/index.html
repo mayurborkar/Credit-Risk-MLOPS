@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Credit Risk For South German Bank</title>
+</head>
+
+<body>
+    <!-- Nav As a heading -->
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Bank Credit Risk Prediction Using South German Credit Data</span>
+    </nav>
+    <br>
+    <br>
+    <h4 class="mx-3" style="color: red;" >Please fill the following details in order to Predict Bank Credit Risk</h4>
+
+    <div class="container">
+        <form action="\predict" method="post" class="my-3">
+            <div class="form-row">
+                <div class="col">
+                    <div class="card my-3 mx-3" id="card" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Status</h5>
+                            <select name="status" id="status" style="width: fit-content;">
+                                <option value="None">STATUS</option>
+                                <option value=1>no checking account</option>
+                                <option value=2>... < 0 DM</option>
+                                <option value=3>0<= ... < 200 DM</option>
+                                <option value=4>... >= 200 DM / salary for at least 1 year</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card my-3 mx-3" id="card1" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Duration</h5>
+                            <input type="text" name="duration" class="form-control" placeholder="Enter Integer Value"
+                            required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card my-3 mx-3" id="card2" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Credit History</h5>
+                            <select name="credit_history" id="credit_history" style="width: fit-content;">
+                                <option value="None">CREDIT HISTORY</option>
+                                <option value=1>DELAY IN PAYING OFF IN THE PAST</option>
+                                <option value=2>CRITICAL ACCOUNT/OTHER CREDITS ELSEWHERE</option>
+                                <option value=3>EXISTING CREDITS PAID BACK DULY TILL NOW</option>
+                                <option value=4>ALL CREDITS AT THIS BANK PAID BACK DULY</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card my-3 mx-3" id="card3" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Purpose</h5>
+                            <select name="purpose" id="purpose" style="width: fit-content;">
+                                <option value="None">PURPOSE</option>
+                                <option value=0>OTHERS</option>
+                                <option value=1>CAR (NEW)</option>
+                                <option value=2>CAR (USED)</option>
+                                <option value=3>FURNITURE/EQUIPMENT</option>
+                                <option value=4>RADIO/TELEVISION</option>
+                                <option value=5>DOMESTIC APPLIANCES</option>
+                                <option value=6>REPAIRS</option>
+                                <option value=7>EDUCATION</option>
+                                <option value=8>VACATION</option>
+                                <option value=9>RETRAINING</option>
+                                <option value=10>BUSINESS</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card my-3 mx-3" id="card4" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Amount</h5>
+                            <input type="text" name="amount" class="form-control" placeholder="Enter Integer Value"
+                            required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card my-3 mx-3" id="card5" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Savings</h5>
+                            <select name="savings" id="savings" style="width: fit-content;">
+                                <option value="None">SAVINGS</option>
+                                <option value=1>UNKNOWN/NO SAVINGS ACCOUNT</option>
+                                <option value=2>... <  100 DM</option>
+                                <option value=3>100 <= ... <  500 DM</option>
+                                <option value=4>500 <= ... < 1000 DM</option>
+                                <option value=5>... >= 1000 DM</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card my-3 mx-3" id="card6" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Employment Duration</h5>
+                            <select name="employment_duration" id="employment_duration" style="width: fit-content;">
+                                <option value="None">EMPLOYMENT DURATION</option>
+                                <option value=1>UNEMPLOYED</option>
+                                <option value=2>< 1 yr</option>
+                                <option value=3>1 <= ... < 4 yrs</option>
+                                <option value=4>4 <= ... < 7 yrs</option>
+                                <option value=5>>= 7 yrs</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card my-3 mx-3" id="card7" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Personal Status Sex</h5>
+                            <select name="personal_status_sex" id="personal_status_sex" style="width: fit-content;">
+                                <option value="None">PERSONAL STATUS SEX</option>
+                                <option value=1>MALE : DIVORCED/SEPARATED</option>
+                                <option value=2>FEMALE : NON-SINGLE OR MALE : SINGLE</option>
+                                <option value=3>MALE : MARRIED/WIDOWED</option>
+                                <option value=4>FEMALE : SINGLE</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="form-row">
+                <div class="col">
+                    <div class="card my-3 mx-3" id="card8" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Installment Rate</h5>
+                            <select name="installment_rate" id="installment_rate" style="width: fit-content;">
+                                <option value="None">INSTALLMENT RATE</option>
+                                <option value=1>>= 35</option>
+                                <option value=2>25 <= ... < 35</option>
+                                <option value=3>20 <= ... < 25</option>
+                                <option value=4>< 20</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card my-3 mx-3" id="card9" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Present Residence</h5>
+                            <select name="present_residence" id="present_residence" style="width: fit-content;">
+                                <option value="None">PRESENT RESIDENCE</option>
+                                <option value=1>< 1 yr</option>
+                                <option value=2>1 <= ... < 4 yrs</option>
+                                <option value=3>4 <= ... < 7 yrs</option>
+                                <option value=4> >= 7 yrs</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card my-3 mx-3" id="card10" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Property</h5>
+                            <select name="property" id="property" style="width: fit-content;">
+                                <option value="None">PROPERTY</option>
+                                <option value=1>UNKNOWN / NO PROPERTY</option>
+                                <option value=2>CAR OR OTHER</option>
+                                <option value=3>BUILDING SOC. SAVINGS AGR./LIFE INSURANCE</option>
+                                <option value=4>REAL ESTATE</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card my-3 mx-3" id="card11" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">age</h5>
+                            <input type="text" name="age" class="form-control" placeholder="Enter Integer Value"
+                            required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card my-3 mx-3" id="card13" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Number Credits</h5>
+                            <select name="number_credits" id="number_credits" style="width: fit-content;">
+                                <option value="None">NUMBER CREDITS</option>
+                                <option value=1>1</option>
+                                <option value=2>2-3</option>
+                                <option value=3>4-5</option>
+                                <option value=4>>= 6</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card my-3 mx-3" id="card14" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Telephone</h5>
+                            <select name="telephone" id="telephone" style="width: fit-content;">
+                                <option value="None">TELEPHONE</option>
+                                <option value=1>NO</option>
+                                <option value=2>YES (UNDER CUSTOMER NAME)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <!-- Submit -->
+            <div class="col my-3">
+                <input type="submit" id="button" value="Submit" class="btn btn-primary">
+            </div>
+
+        </form>
+        <br>
+        <br>
+
+    </div>
+
+    <footer>
+      <a href="https://www.linkedin.com/in/mayurborkar/" target="_blank"><i class="fa fa-linkedin" ></i></a>
+      <a href="https://github.com/mayurborkar/Internship-South-German-Bank-Credit-Risk" target="_blank"><i class="fa fa-github"></i></a>
+      <br>
+      <br>
+      <small class="copyright text-muted" style="color: black;">Copyright@: Mayur Borkar👍</small>
+    </footer>
+
+    <style>
+        body{
+             background-image: url("https://raw.githubusercontent.com/mayurborkar/Internship-South-German-Bank-Credit-Risk/main/images/Credit_card.webp");
+             background-position: center;
+             background-repeat: no-repeat;
+             background-size: 100% 100%;
+             height: 100%;
+        }
+
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card {
+                border: 3px solid black;
+                border-spacing: 30px;
+        }
+
+        .card1 {
+                border: 2px solid black;
+                border-spacing: 30px;
+        }
+
+        .card2 {
+                border: 2px solid black;
+                border-spacing: 30px;
+        }
+
+        .card3 {
+                border: 2px solid black;
+                border-spacing: 30px;
+        }
+
+        .card4 {
+                border: 2px solid black;
+                border-spacing: 30px;
+        }
+
+        .card5 {
+                border: 2px solid black;
+                border-spacing: 30px;
+        }
+
+        .card6 {
+                border: 2px solid black;
+                border-spacing: 30px;
+        }
+
+        .card7 {
+                border: 2px solid black;
+                border-spacing: 30px;
+        }
+
+        .card8 {
+                border: 2px solid black;
+                border-spacing: 30px;
+        }
+
+        .card9 {
+                border: 2px solid black;
+                border-spacing: 30px;
+        }
+
+        .card10 {
+                 border: 2px solid black;
+                 border-spacing: 30px;
+        }
+
+        .card11 {
+                 border: 2px solid black;
+                 border-spacing: 30px;
+        }
+
+        .card12 {
+                 border: 2px solid black;
+                 border-spacing: 30px;
+        }
+
+        .card13 {
+                 border: 2px solid black;
+                 border-spacing: 30px;
+        }
+
+        footer {
+                /* background: #061D25; */
+                padding: 20px 0;
+                text-align: center;
+        }
+
+        footer a {
+                  color: #061D25;
+                  font-size: 50px;
+                  padding: 10px;
+        }
+
+        footer small {
+                      color: black;
+                      font-size: 25px;
+        }
+
+        footer a:hover {
+                        color: rgb(75, 7, 7);
+        }
+
+    </style>
+
+</body>
+
+</html>

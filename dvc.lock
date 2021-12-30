@@ -7,40 +7,40 @@ stages:
       md5: d97a9236772dccd8e215323639ffd47c
       size: 51943
     - path: src\get_data.py
-      md5: 8517be3f0eef9efff18b48f2c43373fe
-      size: 746
+      md5: df9f147e92f9ec1980ff1734ba2fe6c6
+      size: 858
     - path: src\load_data.py
       md5: 6ab150eee37f213d3034a87990fb403c
       size: 516
     outs:
     - path: data\raw\credit.csv
-      md5: 10ed9f5ef27e764435c4600fce6df820
-      size: 48052
+      md5: 81dc785bfe71cd7dc1a075a59cd7e00d
+      size: 35973
   split_data:
     cmd: python src\split_data.py --config=params.yaml
     deps:
     - path: data\raw\credit.csv
-      md5: 10ed9f5ef27e764435c4600fce6df820
-      size: 48052
+      md5: 81dc785bfe71cd7dc1a075a59cd7e00d
+      size: 35973
     - path: src\split_data.py
       md5: 8c20ab52cdf6705bb7e03e598222679a
       size: 994
     outs:
     - path: data\processed\test_credit.csv
-      md5: 0a80532b3dde2fe464840be0d2197a46
-      size: 9820
+      md5: 41f913b2a2f61d60ff5e8f8bc3d58985
+      size: 7341
     - path: data\processed\train_credit.csv
-      md5: 3215b87a310b4faebf43214efce47079
-      size: 38491
+      md5: 6a8942ad5a9241bf61447382ee9c4bc9
+      size: 28812
   train_and_evaluate:
     cmd: python src\train_and_evaluate.py --config=params.yaml
     deps:
     - path: data\processed\test_credit.csv
-      md5: 0a80532b3dde2fe464840be0d2197a46
-      size: 9820
+      md5: 41f913b2a2f61d60ff5e8f8bc3d58985
+      size: 7341
     - path: data\processed\train_credit.csv
-      md5: 3215b87a310b4faebf43214efce47079
-      size: 38491
+      md5: 6a8942ad5a9241bf61447382ee9c4bc9
+      size: 28812
     - path: src\train_and_evaluate.py
       md5: f42449a3ff2fbf3d7cded0c1799dc856
       size: 3306
@@ -54,8 +54,8 @@ stages:
       md5: 9478e2041f3ecdf583ccf764627d993d
       size: 74
     - path: report\scores.json
-      md5: 1ba18a3532f39b05d1a66508c9cc74c6
+      md5: 29e83d512d59dafd64af32f63bc75e98
       size: 136
     - path: saved_models\model.joblib
-      md5: d4f1b977a547de1d7a57b13cbdd74c4f
-      size: 4226269
+      md5: b365976c7127e18443b77f903e638622
+      size: 4149834

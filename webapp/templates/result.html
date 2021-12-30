@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Credit Risk For South German Bank</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2 class='container-heading' style="margin: 10%;"><span class="heading_font">Predict Bank Credit Risk Using Credit Data</span></h2>
+            <br>
+            <br>
+            <br>
+
+            <!-- Result -->
+            <div style="color: rgba(236, 15, 15, 0.993);" class="results">
+                <h2> {{prediction_text}}</h2>
+            </div>
+
+        </form>
+
+    </div>
+    <br>
+    <br>
+
+    <footer>
+        <a href="https://www.linkedin.com/in/mayurborkar/" target="_blank"><i class="fa fa-linkedin" style="color: darkblue;"></i></a>
+        <a href="https://github.com/mayurborkar/Internship-South-German-Bank-Credit-Risk" target="_blank"><i class="fa fa-github" style="color: darkblue;"></i></a>
+        <br>
+        <br>
+        <small class="copyright text-muted">Copyright@: Mayur Borkar👍</small>
+    </footer>
+
+    <style>
+        body{
+             background-image:url("https://raw.githubusercontent.com/mayurborkar/Internship-South-German-Bank-Credit-Risk/main/images/Credit_card.webp");
+             background-position: center;
+             background-repeat: no-repeat;
+             background-size: 200%;
+             height: 100%;
+        }
+        
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .heading_font{
+                    color: rgba(236, 15, 15, 0.993);
+                    font-family: "Times New Roman", Times, serif;
+                    font-size: 50px;
+                    font-weight: normal;
+        }
+
+        footer {
+                /* background: #061D25; */
+                padding: 20px 0;
+                text-align: center;
+        }
+
+        footer a {
+                  /* color: #061D25; */
+                  font-size: 50px;
+                  padding: 10px;
+        }
+
+        footer small {
+                      color: black;
+                      font-size: 25px;
+        }
+
+        footer a:hover {
+                        color: rgb(75, 7, 7);
+        }
+    </style>
+
+</body>
+
+</html>
