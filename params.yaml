@@ -17,9 +17,12 @@ split_data:
 estimators:
   RandomForestClassifier:
     params:
-      max_depth: 8
-      max_features: 5
-      n_estimators: 103
+#      max_depth: 8
+#      max_features: 5
+#      n_estimators: 103
+        max_depth: 8
+        max_features: 6
+        n_estimators: 386
 
 model_dir: saved_models
 
