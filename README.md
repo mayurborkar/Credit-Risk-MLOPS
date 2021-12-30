@@ -42,3 +42,22 @@ dvc metrics show
 ```bash
 dvc metrics diff
 ```
+## Tox
+Tox Can Be Used For Creating The Virtual Env. In that We Can Test Our Test
+Cases That Are We Mention in The **test** Folder.
+```bash
+tox
+```
+If You Had Done Some Changes In Requirements File. If You Want To Run Again 
+Tox Command For That
+```bash
+tox -r
+```
+We Can Also Run Directly test Cases With The Help Of Below Command
+```bash
+pytest -v
+```
+To Create The Standard pypi package, there is command
+```bash
+python setup.py sdist bdist_wheel
+```
