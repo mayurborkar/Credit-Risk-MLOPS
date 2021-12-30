@@ -30,7 +30,15 @@ git remote add origin https://github.com/mayurborkar/Credit-Risk-MLOPS.git
 ```bash
 git branch -M main && git push -u origin main
 ```
-## After Creating Stage In DVC.yaml File
+## After Creating Every Stage In DVC.yaml File Use below Command
 ```bash
 dvc repro
+```
+## Checking Metrics In DVC
+```bash
+dvc metrics show
+```
+## Checking The Difference In Metrics
+```bash
+dvc metrics diff
 ```
