@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, request, render_template
 from wsgiref import simple_server
 import joblib
 import yaml
