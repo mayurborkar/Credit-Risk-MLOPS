@@ -1,14 +1,12 @@
 from flask import Flask, request, render_template
+from prediction_service import prediction
 from wsgiref import simple_server
 import joblib
 import yaml
 import os
 
 params_path = "params.yaml"
-
 templates = os.path.join("webapp", "templates")
-
-app = Flask(__name__, template_folder=templates)
 
 
 def read_params(config_path=params_path):
@@ -20,6 +18,8 @@ def read_params(config_path=params_path):
 config = read_params(params_path)
 model_dir_path = config["webapp_model_dir"]
 model = joblib.load(model_dir_path)
+
+app = Flask(__name__, template_folder=templates)
 
 
 @app.route("/", methods=['GET', 'POST'])
