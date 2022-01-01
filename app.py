@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template
-from prediction_service import prediction
 from wsgiref import simple_server
 import joblib
 import yaml
