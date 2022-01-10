@@ -1,0 +1,16 @@
+{"status":{"min":1.0,"max":4.0},
+  "duration":{"min":4.0,"max":72.0},
+  "credit_history":{"min":0.0,"max":4.0},
+  "purpose":{"min":0.0,"max":10.0},
+  "amount":{"min":250.0,"max":18424.0},
+  "savings":{"min":1.0,"max":5.0},
+  "employment_duration":{"min":1.0,"max":5.0},
+  "installment_rate":{"min":1.0,"max":4.0},
+  "personal_status_sex":{"min":1.0,"max":4.0},
+  "present_residence":{"min":1.0,"max":4.0},
+  "property":{"min":1.0,"max":4.0},
+  "age":{"min":19.0,"max":75.0},
+  "number_credits":{"min":1.0,"max":4.0},
+  "telephone":{"min":1.0,"max":2.0},
+  "credit_risk":{"min":0.0,"max":1.0}
+}
