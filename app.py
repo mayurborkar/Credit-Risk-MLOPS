@@ -35,11 +35,7 @@ def index():
             if request.form:
                 dict_req = dict(request.form)
                 response = prediction.form_response(dict_req)
-                if response == 0:
-                    label = 'Bad'
-                else:
-                    label = 'Good'
-                return render_template('result.html', prediction_text=" The Credit Risk Is {}".format(label))
+                return render_template('result.html', prediction_text=" The Credit Risk Is {}".format(response))
             elif request.json:
                 response = prediction.api_response(request.json)
                 return jsonify(response)
@@ -48,7 +44,6 @@ def index():
             print(e)
             error = {"error": "Something went wrong!! Try again later!"}
             error = {"error": e}
-
             return render_template("404.html", error=error)
     else:
         return render_template("index.html")

@@ -31,7 +31,12 @@ def predict(data):
     model_dir_path = config["webapp_model_dir"]
     model = joblib.load(model_dir_path)
     prediction = model.predict(data)
-    return prediction
+    if prediction == 0:
+        return 'Bad'
+    else:
+        return  'Good'
+
+    # return prediction
 
 
 def get_schema(schema_path=schema_path):
