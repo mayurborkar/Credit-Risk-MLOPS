@@ -35,7 +35,7 @@ def index():
             if request.form:
                 dict_req = dict(request.form)
                 response = prediction.form_response(dict_req)
-                return render_template('result.html', prediction_text=" The Credit Risk Is {}".format(response))
+                return render_template('result.html', prediction_text="The Credit Risk Is {}".format(response))
             elif request.json:
                 response = prediction.api_response(request.json)
                 return jsonify(response)

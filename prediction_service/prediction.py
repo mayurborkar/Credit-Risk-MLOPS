@@ -34,7 +34,7 @@ def predict(data):
     if prediction == 0:
         return 'Bad'
     else:
-        return  'Good'
+        return 'Good'
 
     # return prediction
 
