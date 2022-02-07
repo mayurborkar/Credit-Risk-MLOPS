@@ -8,17 +8,20 @@ import prediction_service
 
 input_data = {
     "incorrect_range":
-        {"fixed_acidity": 7897897,
-         "volatile_acidity": 555,
-         "citric_acid": 99,
-         "residual_sugar": 99,
-         "chlorides": 12,
-         "free_sulfur_dioxide": 789,
-         "total_sulfur_dioxide": 75,
-         "density": 2,
-         "pH": 33,
-         "sulphates": 9,
-         "alcohol": 9
+        {"status": 3,
+         "duration": 76,
+         "credit_history": 3,
+         "purpose": 5,
+         "amount": 20000,
+         "savings": 3,
+         "employment_duration": 4,
+         "installment_rate": 4,
+         "personal_status_sex": 3,
+         "present_residence": 2,
+         "property": 3,
+         "age": 48,
+         "number_credits": 3,
+         "telephone": 3
          },
 
     "correct_range":
@@ -52,7 +55,6 @@ input_data = {
          "property": 3,
          "age": 48,
          "number_credits": 3,
-         "telephone": 2
          }
 }
 
