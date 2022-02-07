@@ -55,6 +55,8 @@ input_data = {
          "property": 3,
          "age": 48,
          "number_credits": 3,
+         "telephone": 2,
+         "others": 5
          }
 }
 
